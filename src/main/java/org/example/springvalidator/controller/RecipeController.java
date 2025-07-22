@@ -5,6 +5,7 @@ import org.example.springvalidator.model.Recipe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -23,5 +24,20 @@ public class RecipeController {
         model.addAttribute("recipes", recipes);
         return "home";
     }
+
+    @GetMapping("/recipe/add")
+    public String addRecipe(Model model) {
+        model.addAttribute("recipe", new Recipe());
+        return "recipe/NewRecipeForm";
+    }
+
+    @PostMapping("/recipe/add")
+    public String addRecipe (Recipe recipe){
+        if(recipe != null){
+            recipeService.createRecipe(recipe);
+        }
+        return "redirect:/home";
+    }
+
 
 }
