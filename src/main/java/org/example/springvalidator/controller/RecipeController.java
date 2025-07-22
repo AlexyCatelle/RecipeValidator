@@ -38,13 +38,15 @@ public class RecipeController {
         return "home";
     }
 
-    @GetMapping("/recipe/add")
+    @GetMapping("/recipes/add")
     public String addRecipe(Model model) {
         model.addAttribute("recipe", new Recipe());
-        return "recipe/NewRecipeForm";
+        List <Category> categories =categoryService.getAllCategories();
+        model.addAttribute("categories", categories);
+        return "Recipe/newRecipeForm";
     }
 
-    @PostMapping("/recipe/add")
+    @PostMapping("/recipes/add")
     public String addRecipe (Recipe recipe){
         if(recipe != null){
             recipeService.createRecipe(recipe);
