@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -22,5 +21,5 @@ public class Recipe {
     private String name;
     private UUID categoryId;
     private String instructions;
-    private List<Recipe> ingredients;
+    private String ingredients;
 }
