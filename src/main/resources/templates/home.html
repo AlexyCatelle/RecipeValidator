@@ -9,10 +9,10 @@
     <nav>
         <ul>
             <li>
-                <a>Accueil</a>
+                <a th:href="@{/home}">Accueil</a>
             </li>
             <li>
-                <a>Nouvelle recette</a>
+                <a th:href="@{/recipe/add}">Nouvelle recette</a>
             </li>
             <li>
                 <a> Gestion Catégories</a>
@@ -29,7 +29,6 @@
             <table th:unless="${recipes.isEmpty()}">
                 <thead>
                 <tr>
-                    <th>#</th>
                     <th>Nom</th>
                     <th>Catégorie</th>
                     <th>Ingrédients</th>
@@ -39,9 +38,8 @@
                 </thead>
                 <tbody th:each="r : ${recipes}">
                 <tr>
-                    <td th:text="${r.id}"></td>
                     <td th:text="${r.name}"></td>
-                    <td th:text="${r.categoryId}"></td>
+                    <td th:text="${categories[r.categoryId] ?: 'Inconnue'}"></td>
                     <td th:text="${r.ingredients}"></td>
                     <td th:text="${r.instructions}"></td>
                     <td>

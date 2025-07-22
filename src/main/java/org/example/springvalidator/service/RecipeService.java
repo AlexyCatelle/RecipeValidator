@@ -72,7 +72,8 @@ public class RecipeService implements IRecipeService {
     public Recipe getRecipeById (UUID id) {return recipes.get(id);}
 
     @Override
-    public List<Recipe> getAllRecipes () { return recipes.values().stream().toList();}
+    public List<Recipe> getAllRecipes () {
+        return recipes.values().stream().toList();}
 
     @Override
     public Recipe updateRecipe (UUID id, Recipe recipe) {

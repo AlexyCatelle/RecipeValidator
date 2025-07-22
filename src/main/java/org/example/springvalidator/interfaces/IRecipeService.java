@@ -13,4 +13,5 @@ public interface IRecipeService {
     List<Recipe> getAllRecipes ();
     Recipe updateRecipe (UUID id, Recipe recipe);
     void deleteRecipe (UUID id);
+
 }

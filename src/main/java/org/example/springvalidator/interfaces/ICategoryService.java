@@ -8,7 +8,7 @@ import java.util.UUID;
 public interface ICategoryService {
     Category createCategory (Category category);
     Category getCategoryById (UUID id);
-    List<Category> getAllCategory();
+    List<Category> getAllCategories();
     Category updateCategory (UUID id,Category recipe);
     void deleteCategory (UUID id);
 }
