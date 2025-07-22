@@ -67,5 +67,18 @@ public class RecipeController {
         return "redirect:/home";
     }
 
+    @GetMapping("/recipes/update/{id}")
+public String updateRecipe (@PathVariable("id") UUID id, Model model) {
+        Recipe recipe = recipeService.getRecipeById(id);
+        model.addAttribute("recipe", recipe);
+        return "Recipe/updateRecipeForm";
+    }
+
+    @PostMapping("/recipes/update")
+    public String updateRecipe(Recipe recipe){
+        if(recipe.getId() != null)
+            recipeService.updateRecipe(recipe.getId(), recipe);
+        return "redirect:/recipes/detail/{id}";
+    }
 
 }
