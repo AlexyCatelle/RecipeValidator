@@ -2,8 +2,8 @@ package org.example.springvalidator.controller;
 
 import org.example.springvalidator.interfaces.ICategoryService;
 import org.example.springvalidator.interfaces.IRecipeService;
-import org.example.springvalidator.model.Recipe;
-import org.example.springvalidator.model.Category;
+import org.example.springvalidator.model.entity.Recipe;
+import org.example.springvalidator.model.entity.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

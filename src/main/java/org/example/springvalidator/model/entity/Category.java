@@ -1,6 +1,7 @@
-package org.example.springvalidator.model;
+package org.example.springvalidator.model.entity;
 
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,9 +17,14 @@ import java.util.UUID;
 @AllArgsConstructor
 
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @NotNull(message = "Ce champs doit être rempli !")
     private String name;
     @NotNull(message = "Ce champs doit être rempli !")
     private String description;
+
+    @OneToMany(mappedBy ="category")
+    private List<Recipe> recipes;
 }

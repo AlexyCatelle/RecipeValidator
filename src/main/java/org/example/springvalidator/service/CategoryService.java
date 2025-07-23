@@ -1,7 +1,7 @@
 package org.example.springvalidator.service;
 
 import org.example.springvalidator.interfaces.ICategoryService;
-import org.example.springvalidator.model.Category;
+import org.example.springvalidator.model.entity.Category;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

@@ -1,6 +1,6 @@
 package org.example.springvalidator.interfaces;
 
-import org.example.springvalidator.model.Category;
+import org.example.springvalidator.model.entity.Category;
 
 import java.util.List;
 import java.util.UUID;
